@@ -4,6 +4,10 @@ import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite'
 
 import schema from './model/schema'
 import migrations from './model/migrations'
+import Todo_Text from './model/Todo_Text'
+import Todo_List from './model/Todo_List'
+import Item from './model/Item'
+import Todo from './model/Todo'
 // import Post from './model/Post' // ⬅️ You'll import your Models here
 
 const adapter = new SQLiteAdapter({
@@ -21,6 +25,11 @@ const adapter = new SQLiteAdapter({
 const database = new Database({
   adapter,
   modelClasses: [
-    // Post, // ⬅️ You'll add Models to Watermelon here
+    Todo,
+    Todo_List,
+    Todo_Text,
+    Item
   ],
 })
+
+export default database
